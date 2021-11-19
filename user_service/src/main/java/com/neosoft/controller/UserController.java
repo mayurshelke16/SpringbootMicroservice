@@ -44,13 +44,14 @@ public class UserController {
 	}
 	
 	
-	@PostMapping("/savedata")
-	public ResponseEntity<Contact> saveContact(@RequestBody Contact contact)
-	{
-		Contact savedata=feignCallService.saveContact(contact);
-		return new ResponseEntity<>(savedata,HttpStatus.CREATED);
-		
-	}
+	/*
+	 * @PostMapping("/savedata") public ResponseEntity<Contact>
+	 * saveContact(@RequestBody Contact contact) { Contact
+	 * savedata=feignCallService.saveContact(contact); return new
+	 * ResponseEntity<>(savedata,HttpStatus.CREATED);
+	 * 
+	 * }
+	 */
 	
 	
 	
@@ -69,10 +70,6 @@ public class UserController {
 	    public User getUser(@PathVariable("userId") Long userId) {
 
 	        User user = this.userService.getUser(userId);
-	        
-
-	        //List contacts = this.restTemplate.getForObject("http://contact-service:8282/contact/" + user.getUserId(), List.class);
-
 	        List<Contact> contacts = feignCallService.getID(userId);
 	      
 	        user.setContacts(contacts);

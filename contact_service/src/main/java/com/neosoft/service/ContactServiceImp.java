@@ -24,8 +24,6 @@ public class ContactServiceImp implements ContactService {
 		return contactRepository.save(contact);
 	}
 
-	
-
 
 	@Override
 	public List<Contact> getID(Long userId) {

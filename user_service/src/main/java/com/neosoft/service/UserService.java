@@ -6,13 +6,12 @@ import com.neosoft.model.User;
 
 public interface UserService {
 
-   public User saveDeatils(User user);
+  
+	public User saveDeatils(User user);
 
 	public List<User> gatdata();
 
-	//User getuserID(Long id);
-
-     public User getUser(Long userId);
+	public User getUser(Long userId);
 
 	public void deleteId(Long UserId);
 

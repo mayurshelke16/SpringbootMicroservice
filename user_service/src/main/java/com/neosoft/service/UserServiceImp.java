@@ -25,11 +25,7 @@ public class UserServiceImp implements UserService{
 		return userRepository.findAll();
 	}
 
-	/*
-	 * @Override public User getuserID(Long id) {
-	 * 
-	 * return userRepository.findById(id).get(); }
-	 */
+	
 
 	@Override
 	public User getUser(Long userId) {
